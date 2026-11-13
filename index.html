@@ -3,15 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nume Atelier | Lămpi și mobilier din lemn masiv</title>
-  <meta name="description" content="Lămpi din lemn cu LED, mese de cafea și mobilier minimalist făcut manual în Arad." />
-  <link rel="icon" href="/favicon.svg" />
+  <title>VKR Woodcraft | Lămpi LED și mobilier din lemn masiv</title>
+  <meta name="description" content="Lămpi din lemn masiv cu LED, mese de cafea și mobilier minimalist, făcute manual în Arad. VKR Woodcraft." />
+  <meta name="theme-color" content="#14110F" />
+  <meta property="og:title" content="VKR Woodcraft" />
+  <meta property="og:description" content="Lămpi din lemn masiv cu LED și mobilier minimalist, făcute manual." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="VKR Woodcraft, pagina principală">
+      VKR<span class="brand-dot"></span><span class="brand-sub">woodcraft</span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="/lampi-din-lemn.html">Lămpi</a>
+      <a href="/mese-de-cafea.html">Mese</a>
+      <a href="/comenzi-personalizate.html">Comenzi</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Test titlu</h1>
-    <p>Dacă vezi fonturile și culorile corect, setup-ul e ăâîșț.</p>
+    <section class="hero" id="hero">
+      <div class="hero-stage">
+
+        <div class="hero-lamp">
+          <div class="halo"></div>
+          <svg class="lamp" viewBox="0 0 400 760" role="img" aria-label="Lampă din stejar cu o linie de lumină LED">
+            <defs>
+              <linearGradient id="woodLit" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#B89260" />
+                <stop offset="0.5" stop-color="#D6B887" />
+                <stop offset="1" stop-color="#A9835A" />
+              </linearGradient>
+            </defs>
+
+            <g class="lamp-dark" fill="#3A2D22">
+              <rect x="60" y="660" width="280" height="34" rx="4" />
+              <rect x="110" y="40" width="180" height="630" rx="6" />
+            </g>
+            <g class="lamp-lit" fill="url(#woodLit)">
+              <rect x="60" y="660" width="280" height="34" rx="4" />
+              <rect x="110" y="40" width="180" height="630" rx="6" />
+            </g>
+
+            <path class="lamp-slot" pathLength="1"
+              d="M262 668 C215 600 150 520 190 420 C232 318 262 250 205 150 C185 110 190 70 195 40" />
+            <path class="lamp-glow" pathLength="1"
+              d="M262 668 C215 600 150 520 190 420 C232 318 262 250 205 150 C185 110 190 70 195 40" />
+            <path class="lamp-core" pathLength="1"
+              d="M262 668 C215 600 150 520 190 420 C232 318 262 250 205 150 C185 110 190 70 195 40" />
+          </svg>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Lămpi și mobilier din lemn masiv</p>
+          <h1>VKR Woodcraft</h1>
+          <p class="lead">Lumină caldă, tăiată în lemn. Piese minimaliste, făcute manual în Arad.</p>
+          <a class="btn" href="/lampi-din-lemn.html">Vezi lămpile</a>
+        </div>
+
+        <p class="hero-hint">Derulează</p>
+      </div>
+    </section>
+
+    <section class="next">
+      <h2>Fiecare piesă începe dintr-un bloc de lemn.</h2>
+      <p>Aici vine secțiunea cu procesul, în ziua 3.</p>
+    </section>
   </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>

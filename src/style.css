@@ -6,9 +6,15 @@
   --bg-soft: #1E1915;
   --text: #F3EDE4;
   --text-muted: #B8AFA3;
-  --wood: #8A5A3B;
   --line: #2A221C;
-  --accent: #FFB45E;
+
+  --wood: #C9A878;        /* stejar deschis, ca în poze (înainte: #8A5A3B) */
+  --wood-deep: #3A2D22;   /* lemn în umbră, lampa stinsă */
+  --accent: #FFD9A0;      /* alb cald, ca LED-ul real (înainte: #FFB45E) */
+  --accent-glow: #FFC27A; /* lumina care se întinde pe pagină */
+
+  --paper: #E9E4DB;       /* fundal secțiuni de produs, ca peretele din poza 4 */
+  --ink: #1F1B17;         /* text pe fundal deschis */
 
   --font-display: "Fraunces Variable", Georgia, serif;
   --font-body: "Inter Variable", system-ui, sans-serif;
@@ -44,4 +50,146 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem var(--space);
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.brand-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+  align-self: center;
+}
+.brand-sub {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.site-header nav { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+.site-header nav a { text-decoration: none; color: var(--text-muted); transition: color 0.2s; }
+.site-header nav a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; height: 320vh; }
+
+.hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space);
+  padding-inline: max(var(--space), calc((100% - var(--max)) / 2));
+  overflow: hidden;
+}
+
+.hero-copy { grid-column: 1; grid-row: 1; }
+.hero-lamp {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  height: min(78vh, 720px);
+  justify-self: center;
+}
+.lamp { position: relative; z-index: 1; height: 100%; width: auto; display: block; }
+
+.halo {
+  position: absolute;
+  inset: -35%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse closest-side,
+    rgba(255, 194, 122, 0.45), rgba(255, 194, 122, 0.12) 50%, transparent 75%);
+}
+
+.lamp-slot { fill: none; stroke: #0B0907; stroke-width: 12; }
+.lamp-glow {
+  fill: none; stroke: var(--accent-glow); stroke-width: 24; opacity: 0.28;
+  stroke-dasharray: 1 2; stroke-dashoffset: 0;
+}
+.lamp-core {
+  fill: none; stroke: #FFF6E4; stroke-width: 5;
+  stroke-dasharray: 1 2; stroke-dashoffset: 0;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hero-copy h1 { margin: 0 0 1rem; }
+.lead {
+  max-width: 34ch;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+}
+.btn {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.85rem 1.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.btn:hover { background: var(--accent); color: var(--bg); }
+
+.hero-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.next {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20vh var(--space);
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width: 800px) {
+  .site-header nav { display: none; }
+  .hero-stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    text-align: center;
+  }
+  .hero-copy, .hero-lamp { grid-column: 1; }
+  .hero-lamp { grid-row: 1; height: 48svh; }
+  .hero-copy { grid-row: 2; }
+  .lead { margin-inline: auto; }
 }
