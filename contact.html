@@ -1,17 +1,27 @@
-<!doctype html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacteaza-ne/title>
-  <meta name="description" content="Lămpi din lemn cu LED, mese de cafea și mobilier minimalist făcut manual în Arad." />
-  <link rel="icon" href="/favicon.svg" />
-</head>
-<body>
   <main>
-    <h1>Formular de contact</h1>
-    <p>Dacă vezi fonturile și culorile corect, setup-ul e ăâîșț.</p>
+    <section class="wrap page-hero">
+      <p class="eyebrow">Contact</p>
+      <h1>Hai să discutăm</h1>
+      <p class="lead">Scrie-ne pe WhatsApp sau trimite formularul. Răspundem cât de repede putem.</p>
+    </section>
+
+    <section class="wrap contact-grid">
+      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp"><label>Nu completa: <input name="bot-field" /></label></p>
+        <label>Nume<input type="text" name="nume" required autocomplete="name" /></label>
+        <label>Telefon sau email<input type="text" name="contact" required /></label>
+        <label>Ce vrei să facem?<textarea name="mesaj" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Trimite mesajul</button>
+      </form>
+
+      <div class="contact-info">
+        <h2>Date de contact</h2>
+        <p><a href="https://wa.me/40700000000">WhatsApp</a></p>
+        <p><a href="tel:+40700000000">0700 000 000</a></p>
+        <p><a href="mailto:contact@vkrwoodcraft.ro">contact@vkrwoodcraft.ro</a></p>
+        <p>Arad, România</p>
+        <p class="muted">Program: de completat</p>
+      </div>
+    </section>
   </main>
-  <script type="module" src="/src/main.js"></script>
-</body>
-</html>
