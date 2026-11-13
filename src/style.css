@@ -1,0 +1,47 @@
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+
+:root {
+  --bg: #14110F;
+  --bg-soft: #1E1915;
+  --text: #F3EDE4;
+  --text-muted: #B8AFA3;
+  --wood: #8A5A3B;
+  --line: #2A221C;
+  --accent: #FFB45E;
+
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-body: "Inter Variable", system-ui, sans-serif;
+
+  --space: clamp(1rem, 2vw, 2rem);
+  --max: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 7vw, 6rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3.5rem); }
+
+a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
