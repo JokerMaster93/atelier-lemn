@@ -193,3 +193,84 @@ a { color: inherit; }
   .hero-copy { grid-row: 2; }
   .lead { margin-inline: auto; }
 }
+
+/* ---------- Header peste secțiuni deschise ---------- */
+.site-header {
+  background: rgba(20, 17, 15, 0.72);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+[id] { scroll-margin-top: 5rem; }
+
+/* ---------- Proces ---------- */
+.process { background: var(--bg); padding: 18vh 0 10vh; }
+.process-head {
+  max-width: var(--max);
+  margin: 0 auto 10vh;
+  padding-inline: var(--space);
+}
+.process-head h2 { max-width: 16ch; margin: 0.5rem 0 0; }
+
+.process-track {
+  position: relative;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: var(--space);
+}
+.process-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: clamp(90px, 10vw, 130px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.process-line svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.pl-base { fill: none; stroke: var(--line); stroke-width: 2; }
+.pl-glow {
+  fill: none; stroke: var(--accent-glow); stroke-width: 12; opacity: 0.3;
+  stroke-dasharray: 1 2; stroke-dashoffset: 0;
+}
+.pl-core {
+  fill: none; stroke: #FFF6E4; stroke-width: 3;
+  stroke-dasharray: 1 2; stroke-dashoffset: 0;
+}
+.pl-tip {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #FFF6E4;
+  box-shadow: 0 0 18px 6px var(--accent-glow);
+  opacity: 0;
+}
+
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.step {
+  counter-increment: step;
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(7rem, 18vw, 16rem);
+  align-items: center;
+}
+.step-body { max-width: 34ch; }
+.step--left .step-body { grid-column: 1; justify-self: end; text-align: right; }
+.step--right .step-body { grid-column: 2; }
+.step-num::before {
+  content: "0" counter(step);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+.step h3 { margin: 0.4rem 0 0.6rem; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.step p { margin: 0; color: var(--text-muted); }
+
+@media (max-width: 800px) {
+  .process-line { left: 0.5rem; transform: none; width: 56px; }
+  .step { grid-template-columns: 1fr; min-height: 48svh; padding-left: 4.5rem; }
+  .step--left .step-body,
+  .step--right .step-body { grid-column: 1; justify-self: start; text-align: left; }
+}
