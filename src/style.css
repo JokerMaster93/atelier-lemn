@@ -274,3 +274,71 @@ a { color: inherit; }
   .step--left .step-body,
   .step--right .step-body { grid-column: 1; justify-self: start; text-align: left; }
 }
+
+/* ---------- Utilitare ---------- */
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--space); }
+
+.btn--ghost { border-color: var(--line); color: var(--text); margin-left: 0.75rem; }
+.btn--ghost:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+/* ---------- Colecții (fundal deschis) ---------- */
+.collections { background: var(--paper); color: var(--ink); padding: 14vh 0; }
+.collections h2 { margin: 0.5rem 0 0; }
+.eyebrow--dark { color: #6F522B; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-top: 3.5rem;
+}
+.card { display: block; text-decoration: none; color: inherit; }
+.card-media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #D8D1C5;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.card:hover .card-media img { transform: scale(1.05); }
+.card h3 { margin: 1.1rem 0 0.3rem; font-size: 1.5rem; }
+.card p { margin: 0 0 0.7rem; color: #5B534A; }
+.card-link { font-size: 0.9rem; border-bottom: 1px solid currentColor; }
+
+/* ---------- Atelier ---------- */
+.atelier { background: var(--bg); padding: 16vh 0; }
+.atelier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.atelier h2 { margin: 0.5rem 0 0; max-width: 12ch; }
+.atelier p { color: var(--text-muted); font-size: 1.1rem; margin-top: 0; }
+
+/* ---------- CTA ---------- */
+.cta {
+  background: radial-gradient(ellipse 70% 90% at 50% 120%, rgba(255, 194, 122, 0.22), transparent 70%), var(--bg-soft);
+  padding: 16vh 0;
+  text-align: center;
+}
+.cta h2 { margin: 0 0 1rem; }
+.cta p { color: var(--text-muted); margin: 0 auto; max-width: 40ch; }
+.cta-actions { margin-top: 2rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--bg); border-top: 1px solid var(--line); padding: 4rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; }
+.footer-note { color: var(--text-muted); max-width: 32ch; }
+.site-footer nav, .footer-contact { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; }
+.site-footer a { text-decoration: none; color: var(--text-muted); }
+.site-footer a:hover { color: var(--accent); }
+.site-footer .brand { color: var(--text); }
+.copyright { text-align: center; margin: 3rem 0 0; font-size: 0.8rem; color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .cards { grid-template-columns: 1fr; }
+  .atelier-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .btn--ghost { margin: 0.75rem 0 0; }
+}
